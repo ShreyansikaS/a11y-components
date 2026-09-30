@@ -1,0 +1,27 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A11y Components – tabs, dialog, toast, disclosure</title>
+<link rel="stylesheet" href="styles.css"></head><body><main>
+<h1>Accessible Components</h1><p class="s">Four UI patterns built with semantic HTML, ARIA, and full keyboard support. Try them with Tab, arrow keys, Enter, and Escape.</p>
+
+<section><h2>Tabs</h2>
+<div class="tabs"><div role="tablist" aria-label="Project details">
+ <button role="tab" id="t1" aria-controls="p1" aria-selected="true">Overview</button>
+ <button role="tab" id="t2" aria-controls="p2" aria-selected="false" tabindex="-1">Research</button>
+ <button role="tab" id="t3" aria-controls="p3" aria-selected="false" tabindex="-1">Outcome</button></div>
+ <div role="tabpanel" id="p1" aria-labelledby="t1" tabindex="0"><p>Use Left and Right arrows to move between tabs; Home and End jump to the first and last.</p></div>
+ <div role="tabpanel" id="p2" aria-labelledby="t2" tabindex="0" hidden><p>Tab panels are focusable so keyboard users can reach their content.</p></div>
+ <div role="tabpanel" id="p3" aria-labelledby="t3" tabindex="0" hidden><p>Only the active tab is in the tab order (roving tabindex).</p></div></div></section>
+
+<section><h2>Disclosure</h2>
+<button class="disc" aria-expanded="false" aria-controls="d1">What is a roving tabindex?</button>
+<div id="d1" hidden><p>Only one item in a composite widget has tabindex 0. Arrow keys move that focus, so Tab skips past the whole widget.</p></div></section>
+
+<section><h2>Modal dialog</h2>
+<button id="open">Open dialog</button>
+<div id="modal" class="modal" hidden><div role="dialog" aria-modal="true" aria-labelledby="mt" class="box">
+ <h3 id="mt">Delete this draft?</h3><p>Focus is trapped here. Escape closes it and returns focus to the button that opened it.</p>
+ <button id="confirm">Delete draft</button> <button class="alt" id="cancel">Keep draft</button></div></div></section>
+
+<section><h2>Toast</h2><button id="toastBtn">Save changes</button></section>
+<div id="toasts" role="status" aria-live="polite"></div>
+<script src="components.js"></script></main></body></html>
