@@ -2,7 +2,6 @@
 
 Four interface pieces built so they work with a keyboard and a screen reader: tabs, an expandable section, a modal dialog, and a toast message.
 
-Live demo: https://YOUR-USERNAME.github.io/a11y-components/
 
 ## Why I made this
 Most tutorials build these with a few divs and a click handler, and then they break the moment someone uses Tab instead of a mouse. I wanted to see what it actually takes to do them properly, following the WAI-ARIA Authoring Practices, without using a library that hides the details.
